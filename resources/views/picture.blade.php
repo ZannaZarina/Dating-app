@@ -31,11 +31,11 @@
                                     name="picture">
                             </div>
 
-                            <button
-                                type="submit"
-                                class="btn btn-light">
-                                Submit
-                            </button>
+                                <button
+                                    type="submit"
+                                    class="btn btn-light">
+                                    Submit
+                                </button>
 
                             <a href="{{ route('profile') }}"
                                role="button"

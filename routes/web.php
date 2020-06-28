@@ -29,34 +29,3 @@ Route::put('/picture', 'UpdateProfilePictureController')->name('picture.update')
 Route::get('/users/{user}/gallery', 'MyGalleryController')->name('gallery');
 Route::put('/users/{user}/gallery', 'UpdateGalleryController')->name('gallery.update');
 
-//Route::get('/test', function() {
-//    /** @var App\User $user */
-//    $user = auth()->user();
-//    //return $user->partners()->get(); //where()->get()
-//    $partners = \App\Partner::with(['user'])->get();
-//
-//    foreach ($partners as $partner)
-//    {
-//        echo $partner->user->first_name; ;
-//    }
-//
-//});
-
-Route::get('/test', function() {
-    /** @var App\User $user */
-    $user = auth()->user();
-
-   $pictures = \App\Picture::all();
-
-   $user->pictures()->attach($pictures);
-
-});
-
-Route::get('/tes', function() {
-    /** @var App\User $user */
-    $user = auth()->user();
-
-    return $user->pictures;
-
-});
-

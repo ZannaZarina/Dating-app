@@ -12,7 +12,7 @@ class WelcomeEmail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    private $user;
+    private User $user;
 
     public function __construct(User $user)
     {

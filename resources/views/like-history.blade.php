@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
 
-            <div class="card" style="max-width: 1000px;">
+            <div class="card" style="width: 1000px;">
                 <div class="card-header">Like history</div>
 
                 <div class="card-body">
@@ -35,10 +35,10 @@
                                     </div>
                                 </div>
                             @endforeach
+                        </div>
                             @else
                                 <p> You didn't like anyone yet...</p>
                             @endif
-                        </div>
 
                         <hr class="mt-2 mb-3">
 
@@ -69,10 +69,11 @@
                                         </div>
                                     </div>
                                 @endforeach
+                            </div>
                                 @else
                                     <p> No one liked You yet... </p>
                                 @endif
-                            </div>
+
                             <a href="{{ route('profile') }}"
                                role="button"
                                class="btn-md active card-link btn btn-light">
@@ -84,9 +85,9 @@
                                class="btn-md active card-link btn btn-light">
                                 Find someone
                             </a>
+
                 </div>
             </div>
         </div>
     </div>
-
 @endsection

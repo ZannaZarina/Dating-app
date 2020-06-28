@@ -12,7 +12,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background: url("http://www.baltana.com/files/wallpapers-16/4K-Plain-Blurred-Background-HD-Desktop-Wallpaper-40962.jpg");
+                background: #46006f;
                 background-attachment: fixed;
                 background-size: 2200px;
                 color: #e5f8ff;

@@ -10,7 +10,7 @@ class AddPartnerGenderToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('partner_gender')
+            $table->string('partner_gender')->nullable()
                 ->after('location');
         });
     }
@@ -18,7 +18,7 @@ class AddPartnerGenderToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('partner_gender');
+            $table->dropColumn('partner_gender')->nullable(false);
         });
     }
 }

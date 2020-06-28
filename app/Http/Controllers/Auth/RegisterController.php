@@ -15,17 +15,6 @@ use Symfony\Component\Console\Input\Input;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
     use RegistersUsers;
 
     /**
@@ -86,20 +75,10 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-//        if(request()->hasFile('profile_picture')) {
-//            $user->update([
-//                'profile_picture' => request()
-//                ->file('profile_picture')
-//                ->store('profilePictures')
-//            ]);
-//        }
-
         Mail::to($user->email)
             ->queue(new WelcomeEmail($user));
 
         return $user;
-
-
 
     }
 }

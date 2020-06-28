@@ -16,6 +16,68 @@
                 </div>
                 <div class="card-body">
 
+                    <div class="user-info d-flex">
+                        @if( $user != auth()->user() )
+                            <div>
+                                <a class="d-block mb-4 h-100" data-toggle="modal" data-target="#modal">
+                                    <img src="{{ $user->getPicture() }}"
+                                         class="card-fluid img-thumbnail"
+                                         alt="photo of {{ $user->first_name }}"
+                                         style="width: 100px">
+                                </a>
+                                <div class="modal fade" id="modal" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">{{ $user->first_name }}'s
+                                                    photo</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img class="img-fluid img-thumbnail" src="{{ $user->getPicture() }}"
+                                                     alt="{{ $user->first_name }}" style="width: 100%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <h4> {{ $user->first_name . ' ' . $user->last_name . ', ' . $user->age  }}</h4>
+                                <ul>
+                                    <li class="card-text"> {{ $user->gender }}, living
+                                        in {{ $user->location }} </li>
+                                    <li class="card-text"> looking for
+                                        @if ($user->partner_gender == 'both')
+                                            {{ $user->partner_gender }}, male and female
+                                        @else
+                                            {{ $user->partner_gender }}
+                                        @endif
+                                    </li>
+                                    <li class="card-text">
+                                        partner should be
+                                        @if($user->min_age != $user->max_age)
+                                            @if($user->min_age < $user->max_age)
+                                                at least {{ $user->min_age }} ,
+                                                max  {{ $user->max_age }}
+                                            @else
+                                                at least {{ $user->max_age }} ,
+                                                max  {{ $user->min_age }}
+                                            @endif
+                                        @else
+                                            {{ $user->min_age }}
+                                        @endif
+                                        years old
+                                    </li>
+                                </ul>
+                            </div>
+                        @endif
+                    </div>
+                    <hr>
+
                     @if( $user == auth()->user() )
                         I have
                     @else

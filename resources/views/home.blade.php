@@ -22,12 +22,10 @@
                                         @csrf
                                         <button type="submit" class="btn btn-success" >&#128077</button>
                                     </form>
-
                                     <img src="{{ $user->getPicture() }}"
                                          class="card-img-top img-thumbnail"
                                          alt="photo of {{ $user->first_name }}"
                                          style="width: 80%">
-
                                     <form
                                         method="post"
                                         action="{{ route('match.dislike', $user) }}"
