@@ -6,6 +6,7 @@
 6. Create an empty database
 
 In the .env file:
+
 6. edit APP_URL by adding ':8000'
 7. edit the DB_DATABASE, DB_USERNAME, and DB_PASSWORD fields
 8. edit fields responsible for mail sending: MAIL_USERNAME, MAIL_PASSWORD, MAIL_FROM_ADDRESS=info@date.me, MAIL_FROM_NAME=Date.me
