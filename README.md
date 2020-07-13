@@ -15,5 +15,4 @@ In the .env file:
 10. Connect to your database
 11. Migrate your database: ```php artisan migrate```
 12. Run ```php artisan storage:link``` and ```php artisan db:seed```
-13. Run```php artisan storage:link```
-14. ```php artisan serve``` to run a project
+13. ```php artisan serve``` to run a project
